@@ -8,16 +8,16 @@
 #     BY FRANKENSTEIN.MAIL.UMICH.EDU (CYRUS V2.3.8) WITH LMTPA;
 #     SAT, 05 JAN 2008 09:14:16 -0500
 
-filename = input("Enter a file name ")
 
-while true:
+while True:
   try:
+    filename = input("Enter a file name: ")
     fhandle = open(filename)
   except:
     print("Please enter a valid file name.")
     continue
+  print("before break")
   break
 
 for line in fhandle:
   print(line.upper())
-
