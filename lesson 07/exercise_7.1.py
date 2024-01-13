@@ -20,4 +20,4 @@ while True:
   break
 
 for line in fhandle:
-  print(line.upper())
+  print(line.upper().rstrip())
