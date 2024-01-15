@@ -20,13 +20,29 @@ while True:
     continue
   break
 
+file = b""
 
 while True:
     data = mysock.recv(512)
+    file += data
     if len(data) < 1:
         break
-    print(data.decode(),end='')
+    # print(data.decode(),end='')
 
 mysock.close()
+
+file = file.decode()
+
+file = file[file.index("\r\n\r\n") + 4:]
+
+# print(repr(file))
+
+charlength = min([len(file),3000])
+
+print(file[:charlength])
+
+print("That was the first", charlength, "characters.")
+
+print("Total characters:", len(file))
 
 # Original Code: https://www.py4e.com/code3/socket1.py
